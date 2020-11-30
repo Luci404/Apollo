@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/codicon/codicon.css" />
+</head>
+
+<body>
+  <div id="window">
+    <div id="titlebar">
+      <div id="window-controls">
+        <div id="window-minimize" class="window-icon" onclick="WindowControls_Minimize()"></div>
+        <div id="window-maximize" class="window-icon" onclick="WindowControls_ToggleMaximize()"></div>
+        <div id="window-close" class="window-icon" onclick="WindowControls_Close()"></div>
+      </div>
+    </div>
+    <div id="content">
+
+    </div>
+  </div>
+
+  <script>
+    electron = require('electron')
+  </script>
+
+  <script>
+    const ipc = require('electron').ipcRenderer;
+
+    function WindowControls_Minimize() {
+      ipc.send('minimize');
+    }
+
+    function WindowControls_ToggleMaximize() {
+      ipc.send('toggleMaximize');
+    }
+
+    function WindowControls_Close() {
+      ipc.send('quit');
+    }
+
+  </script>
+
+  <script src="window-controls.js"></script>
+</body>
+
+</html>

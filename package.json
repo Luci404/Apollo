@@ -1,0 +1,23 @@
+{
+  "name": "apollo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luci404/Apollo.git"
+  },
+  "author": "Khaos Systems | Storm Søndergaard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luci404/Apollo/issues"
+  },
+  "homepage": "https://github.com/Luci404/Apollo#readme",
+  "devDependencies": {
+    "electron": "^11.0.3",
+    "electron-reloader": "^1.0.1"
+  }
+}

@@ -1,0 +1,104 @@
+:root 
+{
+    --math-phi: 1.618;
+
+    --palette-white: #fff;
+    --palette-black: #000;
+    --palette-dark: #151515;
+    --palette-black: #000;
+    --palette-gray: #cfcfcf;
+
+    --window-text: var(--palette-gray);
+
+    --titlebar-height: 24px;
+    --titlebar-background-color: var(--palette-black);
+    --content-background-color: var(--palette-dark);
+}
+
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+#window
+{
+    width: 100%;
+    height: 100%;
+    background-color: var(--palette-black);
+    color: var(--window-text);
+    font-family: Segoe WPC,Segoe UI,sans-serif;
+    /*border-radius: 3px;*/<½<
+    overflow: hidden;
+}
+
+.window-fullscreen
+{}
+
+/* titlebar */
+#titlebar
+{
+    width: 100%;
+    height: var(--titlebar-height);
+    background-color: var(--titlebar-background-color);
+
+    -webkit-app-region: drag;
+}
+
+#titlebar #window-controls 
+{
+    float: right;
+}
+
+#titlebar #window-controls .window-icon
+{
+    font: normal normal normal 16px/1 codicon;
+    display: inline-block;
+    line-height: var(--titlebar-height);
+    height: var(--titlebar-height);
+    width: calc(var(--titlebar-height) * var(--math-phi));
+    background-color: var(--titlebar-background-color);
+    color: #CFCFCF;
+    -webkit-app-region: no-drag;
+    text-align: center;
+}
+
+#titlebar #window-controls .window-icon:hover
+{
+    background-color: var(--content-background-color);
+}
+
+#titlebar #window-controls #window-minimize:before
+{
+    content: '\eaba';
+}
+
+#titlebar #window-controls #window-maximize:before
+{
+    content: '\eab9';
+}
+
+.window-fullscreen #titlebar #window-controls #window-maximize:before
+{
+    content: '\eabb';
+}
+
+#titlebar #window-controls #window-close:before
+{
+    content: '\eab8';
+}
+
+/* content */
+#content
+{
+    width: 100%;
+    height: calc(100% - var(--titlebar-height));
+    top: car(--titlebar-height);
+    background-color: var(--content-background-color);
+}
