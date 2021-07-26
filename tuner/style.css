@@ -1,0 +1,97 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  color: #2c3e50;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.notes {
+  margin: auto;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.note {
+  font-size: 90px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+  padding-left: 10px;
+}
+
+.note.active {
+  color: #e74c3c;
+}
+
+.notes-list {
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  -webkit-mask-image: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0),
+    #fff,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.notes-list::-webkit-scrollbar {
+  display: none;
+}
+
+.note {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.note span {
+  position: absolute;
+  right: 0.25em;
+  font-size: 40%;
+  font-weight: normal;
+}
+
+.note-sharp {
+  top: 0.3em;
+}
+
+.note-octave {
+  bottom: 0.3em;
+}
+
+.frequency {
+  font-size: 32px;
+}
+
+.frequency span {
+  font-size: 50%;
+  margin-left: 0.25em;
+}
+
+.frequency-bars {
+  position: fixed;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .meter {
+    width: 100%;
+  }
+
+  .notes {
+    width: 100%;
+  }
+}

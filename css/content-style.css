@@ -1,0 +1,10 @@
+.a4
+{
+    position: absolute;
+    top: calc(16px + 14px);
+    left: 16px;
+}
+
+.a4 span {
+    color: #e74c3c;
+}

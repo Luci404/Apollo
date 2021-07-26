@@ -1,0 +1,65 @@
+<style>
+    .meter {
+        width: 26em;
+        height: 26em;
+        background-color: #0000;
+        bottom: -13em;
+        border-radius: 50%;
+        overflow: hidden;
+       /*-webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 30px), #000 0);*/
+    }
+
+    .meter ul {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    .meter li {
+        background-color: #0000;
+        position: absolute;
+        font-size: 1.5em;
+        width: 10em;
+        height: 10em;
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        border: 1px solid #111;
+        left: 50%;
+        top: 50%;
+        margin-top: -1.3em;
+        margin-left: -10em;
+        overflow: hidden;
+    }
+</style>
+
+<div class="meter" id="meter01">
+    <ul>
+
+        <li style="transform: rotate(30deg) skew(50deg);"></li>
+        <li style="transform: rotate(70deg) skew(50deg);"></li>
+        <li style="transform: rotate(110deg) skew(50deg);"></li>
+        <li style="transform: rotate(150deg) skew(50deg);"></li>
+        <li style="transform: rotate(190deg) skew(50deg);"></li>
+    </ul>
+</div>
+
+<!-- https://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/ -->
+
+<script>
+    function initMeter(id) {
+        const cnt = 20;
+        const angle = 360 / cnt;
+        const skew = 90 - angle;
+        element = document.getElementById(id).getElementsByTagName("ul")[0];
+        element.innerHTML = "";
+
+        for (var i = 0; i < cnt; i++) {
+            element.innerHTML += `<li style="transform: rotate(${angle*i}deg) skew(${skew}deg);"></li>`
+        }
+
+    }
+
+    initMeter("meter01");
+</script>

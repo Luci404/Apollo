@@ -7,18 +7,23 @@ const { app, BrowserWindow, ipcMain, systemPreferences } = require('electron')
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 500,
+    height: 800,
+    minWidth: 500,
+    minHeight: 800,
     frame: false,
-    //transparent: true,
+    transparent: true,
     webPreferences: {
       nodeIntegration: true,
-      enableRemoteModule: true
+      enableRemoteModule: true,
+      webSecurity: false
     },
   })
 
+  console.log(systemPreferences.getMediaAccessStatus("microphone"));
+
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('src/assets/index.html')
   mainWindow.show()
 
   ipcMain.on('minimize', () => {

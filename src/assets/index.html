@@ -1,0 +1,273 @@
+<html>
+
+<head>
+    <style>
+        @font-face {
+            font-family: "Posterama 2001 W04 Regular";
+            src: url("ea250342ec4016561ba9e791c2f39c11.eot");
+            /* IE9*/
+            src: url("ea250342ec4016561ba9e791c2f39c11.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("ea250342ec4016561ba9e791c2f39c11.woff2") format("woff2"),
+                /* chrome、firefox */
+                url("ea250342ec4016561ba9e791c2f39c11.woff") format("woff"),
+                /* chrome、firefox */
+                url("ea250342ec4016561ba9e791c2f39c11.ttf") format("truetype"),
+                /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                url("ea250342ec4016561ba9e791c2f39c11.svg#Posterama 2001 W04 Regular") format("svg");
+            /* iOS 4.1- */
+        }
+
+        @font-face {
+            font-family: "PosteramaTextW15-SemiBold";
+            src: url("PosteramaTextW15SemiBold.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            background-color: transparent;
+        }
+
+        #window {
+            position: static;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(308.01deg, #003139 20.27%, #00414b 60.27%, #005153 88.56%);
+            border-radius: 20px;
+        }
+
+        #titlebar {
+            position: absolute;
+            width: 100%;
+            height: calc(62px + 24px + 24px);
+            top: 0px;
+            left: 0px;
+
+            -webkit-app-region: drag;
+        }
+
+        #window-close {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            top: 30px;
+            right: 40px;
+
+            border-radius: 90px;
+            background-color: #DD3F3F;
+
+            -webkit-app-region: no-drag;
+        }
+
+        #window-maximize {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            top: 30px;
+            right: 63px;
+
+            border-radius: 90px;
+            background-color: #F6EF3F;
+        }
+
+        #window-minimize {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            top: 30px;
+            right: 86px;
+
+            border-radius: 90px;
+            background-color: #29E847;
+
+            -webkit-app-region: no-drag;
+        }
+
+        #title-container {
+            position: absolute;
+            width: 350px;
+            height: 62px;
+            left: 40px;
+            top: 24px;
+        }
+
+        #title-container #company-name {
+            position: absolute;
+            width: 99px;
+            height: 42px;
+            left: 0px;
+            top: 10px;
+
+            font-family: "PosteramaTextW15-SemiBold" !important;
+            ;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 97.4%;
+            /* or 21px */
+
+
+            color: #FFFFFF;
+        }
+
+        #title-container #title-divider {
+            position: absolute;
+            width: 4px;
+            height: 40px;
+            left: 113px;
+            top: 10px;
+
+            background: #FFFFFF;
+            border-radius: 90px;
+        }
+
+        #title-container #app-name {
+            position: absolute;
+            width: 199px;
+            height: 62px;
+            left: 135px;
+            top: 0px;
+
+            font-family: "PosteramaTextW15-SemiBold" !important;
+            ;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 62px;
+            /* identical to box height */
+
+
+            color: #FFFFFF;
+        }
+
+        .card {
+            background: #001E1F;
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        #music-card {
+            position: absolute;
+            width: 880px;
+            height: 330px;
+            left: 40px;
+            top: 120px;
+        }
+
+        #analysis-card {
+            position: absolute;
+            width: 780px;
+            height: 290px;
+            left: 140px;
+            top: 470px;
+        }
+
+        #instrument-card {
+            position: absolute;
+            width: 320px;
+            height: 640px;
+            left: 960px;
+            top: 120px;
+        }
+
+        #nav-card {
+            position: absolute;
+            width: 80px;
+            height: 290px;
+            left: 40px;
+            top: 470px;
+        }
+
+        #fullscreen-tuner-card {
+            position: absolute;
+            width: calc(100% - 40px - 40px);
+            height: calc(100% - 120px - 40px);
+            left: 40px;
+            top: 120px;
+        }
+
+        #instrument-graphics {
+            position: absolute;
+            width: 192px;
+            height: 249px;
+            left: calc(50% - (192px / 2));
+            top: 45px;
+
+            transform: rotate(180deg);
+        }
+
+        #strings-container
+        {
+            position: absolute;
+            text-align: center;
+            width: 50%;
+            height: 36px;
+            left: calc(50% - 25%);
+            top: 295px;
+
+            list-style: none;
+        }
+
+        #strings-container li
+        {
+            display: inline;
+            line-height: 36px;
+            text-align: center;
+            width: 24px;
+
+            font-family: PosteramaTextW15-SemiBold;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 28px;
+            color: #5ADC67;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="window">
+        <div id="titlebar">
+            <div id="title-container">
+                <h2 id="company-name">KHAOS</br>SYSTEMS</h2>
+                <div id="title-divider"></div>
+                <h1 id="app-name">APOLLO</h1>
+            </div>
+
+            <div id="window-close" onclick="WindowControls_Close()"></div>
+            <!--<div id="window-maximize" onclick="WindowControls_ToggleMaximize()"></div>
+            <div id="window-minimize" onclick="WindowControls_Minimize()"></div>-->
+        </div>
+
+        <div class="card" id="fullscreen-tuner-card">
+            <img src="violin.png" id="instrument-graphics"></img>
+            <ul id="strings-container">
+                <li>G</li>
+                <li>D</li>
+                <li>A</li>
+                <li>E</li>
+            </ul>
+        </div>
+
+        <!---<div class="card" id="music-card"></div>
+        <div class="card" id="analysis-card"></div>
+        <div class="card" id="nav-card"></div>
+        <div class="card" id="instrument-card"></div>-->
+
+    </div>
+
+    <script>
+        const ipc = require('electron').ipcRenderer;
+        function WindowControls_Minimize() { ipc.send('minimize'); }
+        function WindowControls_ToggleMaximize() { ipc.send('toggleMaximize'); }
+        function WindowControls_Close() { ipc.send('quit'); }
+    </script>
+
+</body>
+
+</html>

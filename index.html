@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <title>Hello World!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/content-style.css">
+
   <link rel="stylesheet" type="text/css" href="css/codicon/codicon.css" />
 </head>
 
@@ -18,7 +20,10 @@
       </div>
     </div>
     <div id="content">
-
+        <div class="a4">
+            A<sub>4</sub> = <span>440</span><br>
+            Frequency = <span id="frequency">440</span>
+        </div>
     </div>
   </div>
 
@@ -28,22 +33,22 @@
 
   <script>
     const ipc = require('electron').ipcRenderer;
-
-    function WindowControls_Minimize() {
-      ipc.send('minimize');
-    }
-
-    function WindowControls_ToggleMaximize() {
-      ipc.send('toggleMaximize');
-    }
-
-    function WindowControls_Close() {
-      ipc.send('quit');
-    }
-
+    function WindowControls_Minimize() { ipc.send('minimize'); }
+    function WindowControls_ToggleMaximize() { ipc.send('toggleMaximize'); }
+    function WindowControls_Close() { ipc.send('quit'); }
   </script>
 
-  <script src="window-controls.js"></script>
+  <script src="aubio.js"></script>
+  <script src="tuner.js"></script>
+  <script>
+    var tuner = new Tuner(this.a4)
+
+    tuner.onNoteDetected = (note) => { 
+        document.getElementById("frequency").innerHTML = note.frequency.toFixed(2)
+    }
+
+    tuner.init()
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,31 @@
+:root {
+    --color-primary: #f3544d;
+    --color-background: #151515;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-gray: #999;
+    --color-darkgray: #222;
+}
+
+@font-face {
+    font-family: "consolas";
+    src: url("../fonts/Consolas.ttf");
+}
+
+* {
+    font-family: consolas;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    float: left;
+    color: var(--color-gray);
+}
+
+#tuner-container
+{
+    width: 50%;
+    height: 50%;
+    margin: 25%;
+}
